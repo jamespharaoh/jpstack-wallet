@@ -5,6 +5,7 @@ import lombok.NonNull;
 import wbs.framework.component.annotations.ClassSingletonDependency;
 import wbs.framework.component.annotations.PrototypeComponent;
 import wbs.framework.component.annotations.SingletonDependency;
+import wbs.framework.component.config.WbsConfig;
 import wbs.framework.database.NestedTransaction;
 import wbs.framework.database.Transaction;
 import wbs.framework.entity.record.GlobalId;
@@ -49,6 +50,9 @@ class WalletFixtureProvider
 	@SingletonDependency
 	WalletServiceObjectHelper walletServiceHelper;
 
+	@SingletonDependency
+	WbsConfig wbsConfig;
+
 	// implementation
 
 	@Override
@@ -73,7 +77,7 @@ class WalletFixtureProvider
 					menuGroupHelper.findByCodeRequired (
 						transaction,
 						GlobalId.root,
-						"test",
+						wbsConfig.defaultSlice (),
 						"facility"))
 
 				.setCode (
@@ -105,7 +109,7 @@ class WalletFixtureProvider
 					sliceHelper.findByCodeRequired (
 						transaction,
 						GlobalId.root,
-						"test"))
+						wbsConfig.defaultSlice ()))
 
 				.setCode (
 					"test_wallet_service")
