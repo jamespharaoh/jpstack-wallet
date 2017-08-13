@@ -7,7 +7,7 @@
 	</plugin-dependencies>
 
 	<models>
-		<model name="walletService"/>
+		<model name="wallet-service"/>
 		<model name="wallet"/>
 	</models>
 
