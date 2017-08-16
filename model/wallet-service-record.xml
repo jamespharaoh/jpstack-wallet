@@ -1,5 +1,5 @@
 <record
-	name="walletService"
+	name="wallet-service"
 	type="major">
 
 	<fields>
